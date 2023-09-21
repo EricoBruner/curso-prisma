@@ -1,3 +1,4 @@
+/*
 import { Post } from "@prisma/client";
 import prisma from "../database/database";
 
@@ -51,3 +52,4 @@ const postRepository = {
 };
 
 export default postRepository;
+*/
