@@ -1,0 +1,17 @@
+import express, { json } from "express";
+
+import "express-async-errors";
+import { handleApplicationErrors } from "./middlewares/error-middleware";
+import productsRouter from "./routers/product-router";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const app = express();
+app.use(json());
+
+app.use(productsRouter);
+app.use(handleApplicationErrors);
+
+const port = Number(process.env.PORT) || 5000;
+app.listen(port, () => console.log(`Server is up and running on port ${port}`));
